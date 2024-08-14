@@ -1,22 +1,25 @@
 const ul = document.querySelector('ul');
 const input = document.querySelector('input');
 const button = document.querySelector('button');
-let inputValue = input.value;
 
 function handleButtonClick() {
-    let inputValue = input.value;
+    const inputValue = input.value;
     input.value = '';
+
     const li = document.createElement('li');
     const span = document.createElement('span');
     const btn = document.createElement('button');
+    
     li.appendChild(span);
-    li.appendChild(btn);
-    ul.appendChild(li);
     span.textContent = inputValue;
+    li.appendChild(btn);
     btn.textContent = 'Delete';
+    ul.appendChild(li);
+    
     btn.addEventListener('click', () => {
         ul.removeChild(li);
-    })
+    });
+
     input.focus();
 };
 
